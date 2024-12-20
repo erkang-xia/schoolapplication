@@ -21,6 +21,11 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public List<StudentDTO> fetchAllStudentsByAge(Integer age) {
         List<Student> students =  studentRepository.fetchAll(age);
+        for (Student student : students) {
+            System.out.println("ID: " + student.getId() +
+                    ", Name: " + student.getName() +
+                    ", Age: " + student.getAge());
+        }
 
         return students.stream().map(student -> {
             StudentDTO dto = new StudentDTO();

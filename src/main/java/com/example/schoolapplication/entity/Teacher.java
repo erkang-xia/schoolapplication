@@ -21,7 +21,6 @@ public class Teacher {
     @Column(nullable = false)
     private String subject;
 
-//    @ManyToMany(mappedBy = "teachers")
-//    private Set<Student> students;
-
+    @OneToMany(mappedBy = "teacher", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<StudentTeacher> studentTeachers;
 }

@@ -42,7 +42,7 @@ class SchoolApplicationTests {
 
     @Test
     public void testFetchAllStudentsByAge() {
-        List<Student> students = studentRepository.fetchAll(20);
+        List<Student> students = studentRepository.fetchAll(22);
 
         System.out.println("Fetched Students:");
         for (Student student : students) {

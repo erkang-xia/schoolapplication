@@ -21,12 +21,6 @@ public class Student {
     @Column(nullable = false)
     private int age;
 
-//    @ManyToMany
-//    @JoinTable(
-//            name = "student_teacher",
-//            joinColumns = @JoinColumn(name = "student_id"),
-//            inverseJoinColumns = @JoinColumn(name = "teacher_id")
-//    )
-//    private Set<Teacher> teachers;
-
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true,fetch = FetchType.EAGER)
+    private Set<StudentTeacher> studentTeachers;
 }
